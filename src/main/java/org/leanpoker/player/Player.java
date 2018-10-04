@@ -56,7 +56,7 @@ public class Player {
     			&& containsSameRankWithCount(community_cards, hole_ranks, 3)) {
     		return max+1;
     	}
-    	return betFromEdge;
+    	return betFromEdge+1;
     		
 //    	if (active <= 4)
     		
