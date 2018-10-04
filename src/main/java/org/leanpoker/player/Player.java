@@ -40,9 +40,9 @@ public class Player {
 //    	}
     	
     	//community_cards(request);
-    	if (active <= 3)
+//    	if (active <= 4)
     		return max+1;
-    	return 0;
+//    	return 0;
     }
 
     public static void showdown(JsonElement game) {
