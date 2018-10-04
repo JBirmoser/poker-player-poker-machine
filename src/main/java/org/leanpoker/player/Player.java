@@ -35,9 +35,9 @@ public class Player {
 			}
 		}
     	
-//    	if(sameRank) {
-//    		return stack;
-//    	}
+    	if(sameRank) {
+    		return stack;
+    	}
     	
     	//community_cards(request);
 //    	if (active <= 4)
