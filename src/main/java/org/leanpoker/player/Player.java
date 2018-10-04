@@ -51,7 +51,7 @@ public class Player {
     	
     	
     	
-    	String[] community_cards = community_cards(request);
+//    	String[] community_cards = community_cards(request);
 //    	if(community_cards.length > 1 
 //    			&& containsSameRankWithCount(community_cards, hole_ranks, 3)) {
 //    		return max+1;
