@@ -3,6 +3,7 @@ package org.leanpoker.player;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
@@ -51,9 +52,7 @@ public class Player {
     	
     	
     	
-//    	String[] community_cards = community_cards(request);
-//    	if(community_cards.length > 1 
-//    			&& containsSameRankWithCount(community_cards, hole_ranks, 3)) {
+//    	if(containsSameRankWithCount(community_cards(request), hole_ranks, 3)) {
 //    		return max+1;
 //    	}
     	return betFromEdge + 1;
@@ -94,14 +93,19 @@ public class Player {
 
     
     static String[] community_cards(JsonElement jo) {
+    	
+    	
     	String[] ret = new String[3];
     	JsonElement hc = ((JsonObject)jo).get("community_cards");
-    	
-    	ret[0] = ((JsonObject)hc.getAsJsonArray().get(0)).get("rank").getAsString();
+    	JsonArray communityArrays = hc == null ? null : hc.getAsJsonArray();
+//    	if(community_cards.length < 3) {
+//    		
+//    	}
+		ret[0] = ((JsonObject)communityArrays.get(0)).get("rank").getAsString();
 //    	ret[1] = ((JsonObject)hc.getAsJsonArray().get(0)).get("suit").getAsString();
-      	ret[1] = ((JsonObject)hc.getAsJsonArray().get(1)).get("rank").getAsString();
+      	ret[1] = ((JsonObject)communityArrays.get(1)).get("rank").getAsString();
 //    	ret[3] = ((JsonObject)hc.getAsJsonArray().get(1)).get("suit").getAsString();
-      	ret[2] = ((JsonObject)hc.getAsJsonArray().get(2)).get("rank").getAsString();
+      	ret[2] = ((JsonObject)communityArrays.get(2)).get("rank").getAsString();
 //    	ret[5] = ((JsonObject)hc.getAsJsonArray().get(2)).get("suit").getAsString();
     	
     	return ret;
