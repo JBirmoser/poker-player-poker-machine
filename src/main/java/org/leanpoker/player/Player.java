@@ -16,6 +16,7 @@ public class Player {
     	int max = 0;
     	int active = 0;
     	int stack = 0;
+    	int betFromEdge = 0;
     	boolean sameRank = false;
     	String[] hole_ranks = new String[1];
 //    	
@@ -37,6 +38,11 @@ public class Player {
 			if (! "out".equals(jactive.getAsString())) {
 				active++;
 			}
+			
+			if (jname.getAsString().contains("dge")) {
+				JsonElement jst = ((JsonObject)jp).get("bet");
+				betFromEdge = jst.getAsInt();
+			 }
 		}
     	
     	if(sameRank) {
@@ -50,7 +56,7 @@ public class Player {
     			&& containsSameRankWithCount(community_cards, hole_ranks, 3)) {
     		return max+1;
     	}
-    	return 0;
+    	return betFromEdge;
     		
 //    	if (active <= 4)
     		
