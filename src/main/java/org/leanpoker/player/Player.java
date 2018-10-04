@@ -1,5 +1,6 @@
 package org.leanpoker.player;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 
 import java.util.Map;
@@ -9,11 +10,15 @@ public class Player {
 
     static final String VERSION = "Default Java folding player";
 
-    static Random r = new Random();
     
     public static int betRequest(JsonElement request) {
     	
-        return r.nextInt() % 10;
+//    	JsonArray ja =request.getJsonArray();
+//    	for (JsonElement jsonElement : ja) {
+//			
+//		}
+//    	
+        return 10;
     }
 
     public static void showdown(JsonElement game) {
