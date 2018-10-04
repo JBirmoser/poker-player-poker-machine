@@ -55,7 +55,7 @@ public class Player {
 //    	if(containsSameRankWithCount(community_cards(request), hole_ranks, 3)) {
 //    		return max+1;
 //    	}
-    	return max + 1;
+    	return max * 2;
     		
 //    	if (active <= 4)
     		
