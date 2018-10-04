@@ -14,18 +14,18 @@ public class Player {
     
     public static int betRequest(JsonElement request) {
     	
-    	JsonElement ja = ((JsonObject)request).get("players");
-    	
-    	int max = 0;
-    	
-    	for (JsonElement jp : ja.getAsJsonArray()) {
-			JsonElement jbet = ((JsonObject)jp).get("bet");
-			 if (jbet.getAsInt() > max) {
-				 max = jbet.getAsInt();
-			 }
-		}
-    	
-        return max+1;
+//    	JsonElement ja = ((JsonObject)request).get("players");
+//    	
+//    	int max = 0;
+//    	
+//    	for (JsonElement jp : ja.getAsJsonArray()) {
+//			JsonElement jbet = ((JsonObject)jp).get("bet");
+//			 if (jbet.getAsInt() > max) {
+//				 max = jbet.getAsInt();
+//			 }
+//		}
+//    	
+        return 1000;
     }
 
     public static void showdown(JsonElement game) {
